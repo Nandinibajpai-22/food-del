@@ -23,6 +23,10 @@
 .explore-menu-list::-webkit-scrollbar{
     display: none;
 }
+.explore-menu-list-item{
+    cursor: pointer;
+    user-select: none;
+}
 .explore-menu-list-item img{
     width: 7.5vw;
     min-width: 80px;
@@ -39,6 +43,13 @@
     color: #747474;
     font-size: max(1.4vw,16px);
     cursor: pointer;
+    font-weight: 400;
+    transition: 0.2s;
+}
+.explore-menu-list-item .active ~ p,
+.explore-menu-list-item:has(.active) p{
+    color: #262626;
+    font-weight: 600;
 }
 .explore-menu hr{
     margin: 10px 0px;
