@@ -1,16 +1,23 @@
 .food-item{
     width: 280px;
     margin: auto;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px #00000015;
-    transition: 0.3s;
-    animation: fadeIn 1s;
+    border-radius: 12px;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow);
+    transition: all var(--transition-normal);
+    animation: scaleIn 0.6s ease-out;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
 }
 .food-item:hover{
-    transform: scale(1.02);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 .food-item-img-container{
     position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 .food-item-img-container .add{
     width: 35px;
@@ -19,13 +26,21 @@
     right: 15px;
     cursor: pointer;
     border-radius: 50%;
+    transition: all var(--transition-fast);
+    z-index: 2;
 }
 .food-item-img-container .add:hover{
-    border: 2px solid #FF4C24;
+    border: 2px solid var(--secondary-color);
+    transform: scale(1.1);
 }
 .food-item-image{
    width: 100%;
-   border-radius: 15px 15px 0px 0px;
+   height: 100%;
+   object-fit: cover;
+   transition: transform var(--transition-normal);
+}
+.food-item:hover .food-item-image{
+    transform: scale(1.05);
 }
 .food-item-counter{
     position: absolute;
@@ -34,12 +49,21 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 6px;
-    border-radius: 50px;
-    background-color: white;
+    padding: 8px 12px;
+    border-radius: 25px;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    z-index: 2;
+    animation: slideInUp var(--transition-normal);
 }
 .food-item-counter img{
-    width: 30px;
+    width: 28px;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+.food-item-counter img:hover{
+    transform: scale(1.2);
 }
 .food-item-info{
     padding: 20px;
@@ -48,22 +72,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 .food-item-name-rating p{
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 .food-item-name-rating img{
     width: 70px;
 }
 .food-item-desc{
-    color: #676767;
-    font-size: 12px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 10px;
 }
 .food-item-price{
-    color: #FF4C24;
+    color: var(--secondary-color);
     font-size: 22px;
-    font-weight: 500;
-    margin: 10px 0px;
+    font-weight: 700;
+    margin: 12px 0px;
 }
